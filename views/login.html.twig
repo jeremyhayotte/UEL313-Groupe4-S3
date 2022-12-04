@@ -1,9 +1,10 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}User authentication{% endblock %}
+{% block title %} User authentication{% endblock %}
+
 
 {% block content %}
-<h2 class="text-center">{{ block('title') }}</h2>
+<h2 class="text-center" style="color:#8b949e">{{ block('title') }}</h2>
 {% if error %}
 <div class="alert alert-danger">
     <strong>Login failed!</strong> {{ error }}
