@@ -32,3 +32,20 @@ body {
     padding-top: 30px;
     padding-bottom: 10px;
 }
+
+.paginationjs .paginationjs-page li {
+    float: left;
+    border: 1px solid #aaa;
+    border-right: none;
+    list-style: none;
+}
+
+.paginationjs {
+    display: flex;
+    line-height: 1.6;
+    font-family: Marmelad,"Lucida Grande",Arial,"Hiragino Sans GB",Georgia,sans-serif;
+    font-size: 14px;
+    box-sizing: initial;
+}
+
+li {margin: 0;}

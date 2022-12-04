@@ -20,6 +20,7 @@ class UserDAO extends DAO implements UserProviderInterface
             SELECT * 
             FROM tl_users 
             ORDER BY usr_name
+            ASC
         ";
         $result = $this->getDb()->fetchAll($sql);
 
@@ -42,7 +43,7 @@ class UserDAO extends DAO implements UserProviderInterface
     public function findByPage($page, $usersPerPage) {
         $sql = "
             SELECT * FROM tl_users
-            ORDER BY usr_id DESC
+            ORDER BY usr_id ASC
             LIMIT :quantite OFFSET :start
         ";
 

@@ -72,7 +72,7 @@
         <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add user</button></a>
         {% if users %}
         <div class="table-responsive">
-            <table class="table table-hover table-condensed">
+            <table class="table table-hover table-condensed" id="pagination-container">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -108,6 +108,33 @@
                 {% endfor %}
             </table>
         </div>
+
+        <div id="pagination-container"></div>
+        <div id="data-container"></div>
+        <script>
+            function simpleTemplating(data) {
+                var html = '<ul>';
+                $.each(data, function(index, item){
+                    html += '<li style="float: left; border: 1px solid #aaa; border-right: none; list-style: none;">' + item + '</li>';
+                })
+                html += '</ul>';
+                return html;
+            }
+        </script>
+        <script>
+            $('#pagination-container').pagination({
+                dataSource: [1, 2, 3, 4, 5, 6, 7],
+                pageSize: 5,
+                showPrevious : true,
+                showNext : true,
+                callback: function(data, pagination) {
+                    // template method of yourself
+                    var html = simpleTemplating(data);
+                    $('#data-container').html(html);
+                    //dataContainer.html(html);
+                }
+            })
+        </script>
         {% else %}
         <div class="alert alert-warning">No users found.</div>
         {% endif %}
