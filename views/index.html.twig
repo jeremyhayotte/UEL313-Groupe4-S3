@@ -6,10 +6,10 @@
 	<div class="row">
 		{% for link in links %}
 			<div class="col-md-4">
-			    <h2><a class="linkTitle" href="{{ path('link', { 'id': link.id }) }}">{{ link.title }}</a></h2>
-			    <p>{{ link.desc }}</p>
+			    <h2><a class="linkTitle" style="color: #58a6ff" href="{{ path('link', { 'id': link.id }) }}">{{ link.title }}</a></h2>
+			    <p style="color: #8b949e" >{{ link.desc }}</p>
 			    <a href="{{ link.url }}" title="" target="_blank">Open ></a>
-			    <em>(by {{ link.user.username }})</em>
+			    <em style="color: #8b949e">(by {{ link.user.username }})</em>
 
 			    {% for tag in link.tags %}
 			    	<a href="{{ path('tag', { 'id': tag.id }) }}" title="Filtrer">
