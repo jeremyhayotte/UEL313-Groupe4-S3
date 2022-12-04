@@ -108,14 +108,14 @@
                 {% endfor %}
             </table>
         </div>
-
+        <br />
         <div id="pagination-container"></div>
         <div id="data-container"></div>
         <script>
             function simpleTemplating(data) {
                 var html = '<ul>';
                 $.each(data, function(index, item){
-                    html += '<li style="float: left; border: 1px solid #aaa; border-right: none; list-style: none;">' + item + '</li>';
+                    html += '<li>' + item + '</li>';
                 })
                 html += '</ul>';
                 return html;
